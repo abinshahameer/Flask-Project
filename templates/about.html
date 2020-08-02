@@ -5,9 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+{%extends "base.html"%}
+{%block main%}
 <h1>Kollam Pwoli saanam myr</h1>
-<li><a href="#">Home page</a> </li>
-<li><a href="#">About Page</a> </li>
+<li><a href="#">Home page</a></li>
+
+<li><a href="#">About Page</a></li>
+<form action="" method="post">
+    {{form.csrf_token()}}
+    {{form.title}}
+    {{form.submit}}
+</form>
+{%if title%}
+<h1>{{title}}</h1>
+{%endif%}
+
+<p>Some content on the about page</p>
+{%endblock%}
 
 </body>
 </html>
